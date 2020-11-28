@@ -1,15 +1,19 @@
 <html>
 <head>
 <link rel="stylesheet" href="styles.css">
-<title>Massimo's Playground</title>
+<title>Massimo's Website</title>
 </head>
 <body>
-	<h1><strong><em>Massimo's Playground</em></strong></h1>
+	<h1><strong><em>Massimo's Website</em></strong></h1>
 	<hr style = "color: white">
-	<h3>Click the GIF</h3>
+	<h3 id=gif>Click the GIF</h3>
 	<a href = "https://www.w3schools.com/html/default.asp" target="_blank">
 	<img src = "images/goofy.gif" alt = "hello" style = "width:100px:height:100:px:">
 	</a>
- 	<button style ="color:rgba(255, 152, 0, 1);">Click Me!</button>
+ 	<button style ="color:rgba(255, 152, 0, 1);" onclick="gifFunction()">Click Me!</button>
+ 	<script>
+ 		function gifFunction() {
+ 		document.getElementById("gif").innerHTML = "Yay!";
+ 		}
 </body>
 </html>
