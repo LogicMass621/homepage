@@ -1,8 +1,30 @@
+<!DOCTYPE html>
 <html>
 <head>
 <style>
 hr.style1 {
 	border: 5px solid white;
+}
+.button {
+  background-color: white;
+  border: 2px solid white;
+  padding: 30px 64px;
+  color: orange;
+  text-align: center;
+  display: inline-block;
+  font-family:courier;
+  font-size: 150%;
+  cursor: pointer;
+  border-radius: 10px;
+  transition-duration: 0.4s;
+  outline:none
+
+}
+.button:hover {
+  background-color: orange;
+  color: white;
+  /*ADDS A SHADOW UNDER BUTTON I DON'T KNOW WHAT THE NUMBERS MEAN THOUGH.*/
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 </style>
 <link rel="stylesheet" href="styles.css">
@@ -12,26 +34,27 @@ hr.style1 {
 <body onload="clickTheButton()">
 	<h1><strong><em>Massimo's Website</em></strong></h1>
 	<hr class="style1">
-	<button style ="color:rgba(255, 152, 0, 1);" onclick="gifFunction()">Click Me!</button>
-	<h3 id=gif onchange = paragraphChange()>Do what the button says</h3>
-	<a href = "https://www.w3schools.com/html/default.asp" target="_blank">
-	<img src = "images/goofy.gif" alt = "hello" style = "width:100px:height:100:px:" >
+	<button class = "button" onclick="gifFunction()">Click Me!</button>
+	<br>
+	<p style = "color:white;font-family:courier;font-size:150%;" id=gif onchange = paragraphChange()>Do what the button says</p>
+	<a href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+	<img cursor = "pointer" onclick = "clickTheButton()"src = "images/goofy.gif" alt = "hello" style = "width:100px:height:100:px;" >
 	<hr class="style1">
 	</a>
-	<p style= "color:blue;font-family:courier;font-size:150%;">This is my website. I hope the button annoys you. Now click it again.<p>
+	<p style= "color:white;font-family:courier;font-size:150%;">This is my website. I hope the button annoys you. Click on Goofy.<p>
  	<script>
  		function gifFunction() {
- 			document.getElementById("gif").innerHTML = "Yay!";
- 			alert('Yay! You clicked the button')
+ 			document.getElementById("gif").innerHTML = "Yay! You clicked the button!";
+ 			alert('Yay! You clicked the button!')
   			setTimeout(function(){paragraphChange(); }, 1000);
 
  		}
  		function paragraphChange() {
  			document.getElementById("gif").innerHTML = "Do what the button says";
- 			alert('Click It Again!!!!')
+ 			alert('Click It Again!!!! Click it. Click it. Click it. Click it.')
  		}
  		function clickTheButton (){
- 			alert('Click the button. Click it. Click it. Click it. Click it.')
+ 			setTimeout(function(){alert('Click the button. Click it. Click it. Click it. Click it.');},1000);
  		}
  	</script>
 </body>
