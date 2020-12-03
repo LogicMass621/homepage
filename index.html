@@ -44,12 +44,16 @@ hr.style1 {
 	<p style= "color:white;font-family:courier;font-size:150%;">This is my website. I hope the button annoys you. Click on Goofy.<p>
  	<script>
  		function gifFunction() {
- 			document.getElementById("gif").innerHTML = "Yay! You clicked the button!";
-  			setTimeout(function(){paragraphChange(); }, 3000);
+ 			var paragraphValue = document.getElementById("gif").innerHTML;
+ 			if (paragraphValue !== "Yay! You clicked the button!") {
+ 				document.getElementById("gif").innerHTML = "Yay! You clicked the button!";
+  				setTimeout(function(){paragraphChange(); }, 3000);
+  			}
  		}
  		function paragraphChange() {
- 			document.getElementById("gif").innerHTML = "Do what the button says";
- 		}
+
+ 				document.getElementById("gif").innerHTML = "Do what the button says";
+ 			}
  		function clickTheButton (){
  			setTimeout(function(){alert('Click the button. Click it. Click it. Click it. Click it.');},1000);
  		}
