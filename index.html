@@ -49,8 +49,8 @@ hr.style1 {
 }
 #position-3{
 	position: fixed;
-	top: 50%;
-	left: 50%;
+	top: 30%;
+	left: 30%;
 }
 </style>
 <link rel="stylesheet" href="styles.css">
@@ -67,18 +67,17 @@ hr.style1 {
 	<img cursor = "pointer" onclick = "clickTheButton()"src = "images/goofy.gif" alt = "hello" style = "width:100px:height:100:px;" >
 	</a>
 	<hr class="style1">
-	<div class="myDiv" id = "position-2">This is my website. I hope the button annoys you. Click on Goofy.</div>
+	<div class="myDiv" id = "position-3">This is my website. I hope the button annoys you. Click on Goofy.</div>
  	<script>
- 		var x
- 		function gifFunction() {
- 			x=0
- 			document.getElementById("gif").innerHTML = "Yay! You clicked the button!";
- 			paragraphChange()
-
+		function gifFunction() {
+ 			var paragraphValue = document.getElementById("gif").innerHTML;
+ 			if (paragraphValue !== "Yay! You clicked the button!") {
+ 				document.getElementById("gif").innerHTML = "Yay! You clicked the button!";
+  				setTimeout(function(){paragraphChange(); }, 3000);
+  			}
  		}
  		function paragraphChange() {
- 			x=1
- 			setTimeout(function(){ if (x==1) {document.getElementById("gif").innerHTML = "Do what the button says";}}, 3000);
+ 			setTimeout(function(){document.getElementById("gif").innerHTML = "Do what the button says";}, 3000);
  		}
  		function clickTheButton (){
  			setTimeout(function(){alert('Click the button. Click it. Click it. Click it. Click it.');},1000);
